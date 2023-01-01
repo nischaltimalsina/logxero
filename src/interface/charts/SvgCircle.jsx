@@ -22,7 +22,7 @@ const SvgCircle = ({ ri, ro, value, className }) => {
 
       <circle
         className={className}
-        strokeWidth={5}
+        strokeWidth={4}
         fill='transparent'
         r={`${ro}%`}
         cx={"50%"}

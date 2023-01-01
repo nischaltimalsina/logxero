@@ -1,13 +1,14 @@
-import { Banner } from "../../Pages/assets/images/headerImages";
-
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle, handleToggle }) => {
   return (
-    <div className=' h-20 w-full flex items-center'>
-      <div className='w-80 object-cover pl-4 flex'>
-        <img src={Banner} className='h-12' alt='' />
+    <div className=' h-20 w-full flex items-center border-b gap-3 bg-neutral-100'>
+      <div className='lg:w-96 object-cover pl-4 lg:pr-12 flex justify-between'>
+        <button onClick={handleToggle}>
+          <MenuIcon toggle={toggle} />
+        </button>
       </div>
-      <div className='relative w-[calc(100%-32rem)] h-full p-4 flex items-center'>
-        <div className='absolute left-0'>
+
+      <div className='relative w-full lg:w-[calc(100%-36rem)] h-full py-4 flex items-center'>
+        <div className='absolute left-3'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -24,11 +25,11 @@ const Navbar = ({ toggle }) => {
         </div>
         <input
           type='text'
-          className='h-full w-full outline-none bg-neutral-50 px-6 font-light text-lg'
+          className='h-full w-full outline-none focus:bg-white rounded-full bg-neutral-50 pl-12 pr-6 font-light text-sm lg:text-lg'
           placeholder='Search for people, products and more... '
         />
       </div>
-      <div className='w-48 h-full flex items-center justify-end gap-4 pr-6'>
+      <div className='lg:w-48 h-full flex items-center justify-end gap-4 pr-4'>
         <button>
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -59,7 +60,7 @@ const Navbar = ({ toggle }) => {
             />
           </svg>
         </button>
-        <button className=' flex items-center gap-3 ' onClick={toggle}>
+        <button className='hidden lg:flex items-center gap-3 '>
           <div className='h-12 w-12 bg-neutral-600 rounded-full'></div>
           <div>
             <svg
@@ -83,3 +84,38 @@ const Navbar = ({ toggle }) => {
 };
 
 export default Navbar;
+const MenuIcon = ({ toggle }) => {
+  return (
+    <>
+      {!toggle ? (
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          strokeWidth={0.9}
+          stroke='currentColor'
+          className='w-10 h-10'>
+          <path
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
+          />
+        </svg>
+      ) : (
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          strokeWidth={0.9}
+          stroke='currentColor'
+          className='w-10 h-10'>
+          <path
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            d='M6 18L18 6M6 6l12 12'
+          />
+        </svg>
+      )}
+    </>
+  );
+};

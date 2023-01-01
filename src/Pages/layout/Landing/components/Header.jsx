@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { Banner, Logo } from "../assets/images/headerImages";
-import MenuIcon from "../assets/svg/Menu";
+import { Banner, Logo } from "../../../assets/headerImages";
+import MenuIcon from "../../../assets/svg/Menu";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);

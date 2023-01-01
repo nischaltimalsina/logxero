@@ -68,7 +68,11 @@ export default function Calendar() {
   let today = startOfToday();
   let [selectedDay, setSelectedDay] = useState(today);
   let [currentMonth, setCurrentMonth] = useState(today);
-  let firstDayCurrentMonth = parse(format(currentMonth, "MMM-yyyy"), "MMM-yyyy", new Date());
+  let firstDayCurrentMonth = parse(
+    format(currentMonth, "MMM-yyyy"),
+    "MMM-yyyy",
+    new Date()
+  );
 
   let days = eachDayOfInterval({
     start: firstDayCurrentMonth,
@@ -93,9 +97,8 @@ export default function Calendar() {
     isSameMonth(parseISO(meeting.startDatetime), currentMonth)
   );
 
-
   return (
-    <div className='w-full h-full flex flex-wrap gap-5 '>
+    <div className='w-full h-full flex flex-wrap gap-5 bg-white'>
       <div className='w-full px-4 '>
         <div className=' flex  items-center'>
           <h2 className='flex-auto font-semibold text-gray-900'>
@@ -155,7 +158,7 @@ export default function Calendar() {
               key={day.toString()}
               className={classNames(
                 dayIdx === 0 && colStartClasses[getDay(day)],
-                "py-1.5"
+                "p-6"
               )}>
               <button
                 type='button'

@@ -2,11 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { navLinkData, StoreNavData } from "./navlinkData";
 
-const Sidebar = () => {
+const Sidebar = ({toggle, handleToggle}) => {
   return (
     <aside className='h-full w-full px-8 py-12 flex flex-col justify-between'>
       <div>
-        <ul className='flex flex-col gap-8 text-neutral-400 font-light'>
+        <ul className='flex flex-col gap-8 text-neutral-500 font-light' onClick={handleToggle}>
           {navLinkData.map((item) => {
             return (
               <li key={item.id} className='flex gap-4 items-center'>
@@ -16,8 +16,8 @@ const Sidebar = () => {
             );
           })}
         </ul>
-        <h3 className='uppercase  text-neutral-400 mt-10 mb-6'>Store</h3>
-        <ul className='flex flex-col gap-8 text-neutral-400 font-light'>
+        <h3 className='uppercase  text-neutral-500 mt-10 mb-6'>Store</h3>
+        <ul className='flex flex-col gap-8 text-neutral-500 font-light' onClick={handleToggle}>
           {StoreNavData.map((item) => {
             return (
               <li key={item.id} className='flex gap-4 items-center'>

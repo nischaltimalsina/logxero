@@ -1,6 +1,5 @@
 import React from "react";
-import { Banner } from "../assets/images/headerImages";
-import LogoBanner from "../assets/svg/LogoBanner";
+import LogoBanner from "../../../assets/svg/LogoBanner";
 
 const Hero = () => {
   return (

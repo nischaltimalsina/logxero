@@ -29,7 +29,7 @@ const LineChartInterface = ({ data }) => {
         margin={{
           top: 5,
           left: 0,
-          right: 10,
+          right: 5,
           bottom: 5,
         }}
         className='font-light text-sm text-neutral-400 '>
@@ -70,7 +70,7 @@ export const CustomTooltip = ({ active, payload, label }) => {
   console.log();
   if (active && payload && payload.length) {
     return (
-      <div className='bg-neutral-600/30 backdrop-blur-sm rounded-2xl px-6 py-2'>
+      <div className='bg-neutral-600/30 backdrop-blur-sm rounded-md px-6 py-2'>
         <div>
           {payload.map((pld, index) => (
             <div className=' flex' key={index}>
@@ -90,3 +90,4 @@ export const CustomTooltip = ({ active, payload, label }) => {
 const XAxisTickFormat = ( label ) => {
   return label.slice(0, 3)
 };
+
